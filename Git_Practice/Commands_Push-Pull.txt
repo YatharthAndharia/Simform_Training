@@ -1,0 +1,102 @@
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote$ git clone https://github.com/YatharthAndharia/Simform_Training.git
+Cloning into 'Simform_Training'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.24 KiB | 635.00 KiB/s, done.
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote$ ls
+Simform_Training
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote$ cd Simform_Training
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ ls
+Demo  README.md
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git pull origin master
+fatal: couldn't find remote ref master
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git pull origin main
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 693 bytes | 693.00 KiB/s, done.
+From https://github.com/YatharthAndharia/Simform_Training
+ * branch            main       -> FETCH_HEAD
+   3d8587e..075afc2  main       -> origin/main
+Updating 3d8587e..075afc2
+Fast-forward
+ Demo | 1 +
+ 1 file changed, 1 insertion(+)
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ ls
+Demo  README.md
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ cat Demo
+Helloworld!
+This Demo File.
+I am Yatharth.
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ cat >> Demo
+Helloworld!
+Git is Superb.
+^Z
+[1]+  Stopped                 cat >> Demo
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ cat Demo
+Helloworld!
+This Demo File.
+I am Yatharth.
+Helloworld!
+Git is Superb.
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git add .
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   Demo
+
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git commit -m "1st Remote Commit"
+[main 324f425] 1st Remote Commit
+ 1 file changed, 2 insertions(+)
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git push origin main
+Username for 'https://github.com': YatharthAndharia
+Password for 'https://YatharthAndharia@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/YatharthAndharia/Simform_Training.git/'
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/YatharthAndharia/Simform_Training.git'
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git push origin main
+Username for 'https://github.com': YatharthAndharia
+Password for 'https://YatharthAndharia@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/YatharthAndharia/Simform_Training.git/'
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ ^C
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git push origin main
+Username for 'https://github.com': YatharthAndharia
+Password for 'https://YatharthAndharia@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 342 bytes | 342.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/YatharthAndharia/Simform_Training.git
+   075afc2..324f425  main -> main
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git branch
+* main
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git config --global credential.helper cache
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git push origin main
+Username for 'https://github.com': YatharthAndharia
+Password for 'https://YatharthAndharia@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/YatharthAndharia/Simform_Training.git/'
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git push origin main
+Username for 'https://github.com': YatharthAndharia
+Password for 'https://YatharthAndharia@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/YatharthAndharia/Simform_Training.git/'
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git push origin main
+Username for 'https://github.com': YatharthAndharia
+Password for 'https://YatharthAndharia@github.com': 
+Everything up-to-date

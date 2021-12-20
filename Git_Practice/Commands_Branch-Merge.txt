@@ -1,0 +1,65 @@
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git --version
+git version 2.25.1
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git init
+Initialized empty Git repository in /home/yatharthandharia/Desktop/Git/.git/
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ touch demo.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ vi demo.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ vi demo.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ vi demo.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git add demo.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   demo.txt
+
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git commit -m "This is First Commit"
+[master (root-commit) f488e2a] This is First Commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 demo.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git status
+On branch master
+nothing to commit, working tree clean
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git config --global user.name "YatharthAndharia"
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git config --global user.email "yatharthandharia@gmail.com"
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git branch
+* master
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ touch demo1.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ cat >> demo1.txt
+This is git commands demo file.
+^Z
+[1]+  Stopped                 cat >> demo1.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ cat demo1.txt
+This is git commands demo file.
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ ls
+demo1.txt  demo.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	demo1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git branch feature
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git checkout feature
+Switched to branch 'feature'
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git add .
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git commit -m "Feature Commit"
+[feature 2633290] Feature Commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 demo1.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git checkout master
+Switched to branch 'master'
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git merge feature
+Updating f488e2a..2633290
+Fast-forward
+ demo1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 demo1.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ git branch -d feature
+Deleted branch feature (was 2633290).
+yatharthandharia@sf-cpu-285:~/Desktop/Git$ ^C
+yatharthandharia@sf-cpu-285:~/Desktop/Git$

@@ -1,0 +1,157 @@
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ cat >> stash.txt
+This is Stash Demo File.
+^Z
+[2]+  Stopped                 cat >> stash.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git add .
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   stash.txt
+
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git stash -u
+Saved working directory and index state WIP on main: 324f425 1st Remote Commit
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git stash apply
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   stash.txt
+
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   stash.txt
+
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git commit -m "Stashing Demo"
+[main 8c2d1d1] Stashing Demo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 stash.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 338 bytes | 338.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/YatharthAndharia/Simform_Training.git
+   324f425..8c2d1d1  main -> main
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ ls
+Demo  README.md  stash.txt
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ mkdir Git_Practice
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ ls
+Git_Practice  README.md
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git add .
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	renamed:    Demo -> Git_Practice/Demo
+	renamed:    stash.txt -> Git_Practice/stash.txt
+
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git commit -m "Seperate Folder For Git Practice"
+[main 1f8afca] Seperate Folder For Git Practice
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ rename Demo => Git_Practice/Demo (100%)
+ rename stash.txt => Git_Practice/stash.txt (100%)
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 373 bytes | 373.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/YatharthAndharia/Simform_Training.git
+   8c2d1d1..1f8afca  main -> main
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git log
+commit 1f8afcac4ed619d76d47cc177b8983778ae676c2 (HEAD -> main, origin/main, origin/HEAD)
+Author: YatharthAndharia <yatharthandharia@gmail.com>
+Date:   Mon Dec 20 12:32:00 2021 +0530
+
+    Seperate Folder For Git Practice
+
+commit 8c2d1d1f46e7bb0bfb04705fc0e7f7289a79427b
+Author: YatharthAndharia <yatharthandharia@gmail.com>
+Date:   Mon Dec 20 12:28:48 2021 +0530
+
+    Stashing Demo
+
+commit 324f425d37509006b1bf92aad255b43f1cd87812
+Author: YatharthAndharia <yatharthandharia@gmail.com>
+Date:   Mon Dec 20 11:52:36 2021 +0530
+
+    1st Remote Commit
+
+commit 075afc2aa603be051fa32e8d3a30b896902eaf99
+Author: YatharthAndharia <68765494+YatharthAndharia@users.noreply.github.com>
+Date:   Mon Dec 20 11:46:19 2021 +0530
+
+    Update Demo
+
+commit 3d8587e5047db1c8a99f317d0196dc72f26cc58b
+Author: YatharthAndharia <68765494+YatharthAndharia@users.noreply.github.com>
+Date:   Mon Dec 20 11:40:02 2021 +0530
+
+    Create Demo
+
+commit 80c68430450e3f094319ed5d53a15ea076bca9fe
+Author: YatharthAndharia <68765494+YatharthAndharia@users.noreply.github.com>
+Date:   Mon Dec 20 11:39:28 2021 +0530
+
+    Initial commit
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git log --oneline
+1f8afca (HEAD -> main, origin/main, origin/HEAD) Seperate Folder For Git Practice
+8c2d1d1 Stashing Demo
+324f425 1st Remote Commit
+075afc2 Update Demo
+3d8587e Create Demo
+80c6843 Initial commit
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git revert 1f8afca
+[main c5450c6] Revert "Seperate Folder For Git Practice"
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ rename Git_Practice/Demo => Demo (100%)
+ rename Git_Practice/stash.txt => stash.txt (100%)
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git revert HEAD
+[main 9c854a3] Revert "Revert "Seperate Folder For Git Practice""
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ rename Demo => Git_Practice/Demo (100%)
+ rename stash.txt => Git_Practice/stash.txt (100%)
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+yatharthandharia@sf-cpu-285:~/Desktop/Git_Remote/Simform_Training$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 550 bytes | 550.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/YatharthAndharia/Simform_Training.git
+   1f8afca..9c854a3  main -> main
