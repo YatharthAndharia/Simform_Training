@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function fun()
+            {
+                var n=document.getElementById("t1").value;
+                //alert("Helloworld");
+                var count=0;
+                while(n>0)
+                {
+                    n=n&(n-1);
+                    count++;
+                }
+                document.write(count);
+                console.log(count);
+            }
+        </script>
+    </head>
+    <body>
+        <input id="t1">
+        <br>
+        <button onclick="fun()" id="btn1">Submit</button>
+    </body>
+</html>
