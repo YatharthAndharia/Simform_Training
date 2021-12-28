@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/sum-as-per-frequency-88b00c1f/</title>
+        <script type="text/javascript">
+            const arr=[4,4,6,5,3,3,3,9];
+            const len=arr.length;
+            const q=1;
+            var map=new Map();
+            for(let i=0;i<len;i++)
+            {
+                if(map.has(arr[i]))
+                {
+                    map.set(arr[i],map.get(arr[i])+1);
+                }
+                else
+                {
+                    map.set(arr[i],1);   
+                }
+            }
+            //console.log(map);
+            var sum=0;
+            for(let i=0;i<q;i++)
+            {
+                let l=2,r=7;
+                for (const [key, value] of map.entries()) 
+                {
+                    //console.log(key, value);
+                    if(value>=l && value<=r)
+                    {
+                        sum+=key*value;
+                    }
+                }
+            }
+            console.log(sum)
+        </script>
+    </head>
+</html>

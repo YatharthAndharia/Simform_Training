@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/maximize-sum-0423b95e/</title>
+        <script type="text/javascript">
+            //console.log("Helloworld");
+            var tc=1;
+            for(let it=0;it<tc;it++)
+            {
+                let sum=0;
+                var n=4,k=2;
+                const arr=[2,1,2,5];
+                arr.sort();
+                arr.reverse();
+                //console.log(arr);
+                var map=new Map();
+                for(let i=0;i<arr.length;i++)
+                {
+                    if(map.has(arr[i]))
+                    {
+                        map.set(arr[i],map.get(arr[i])+1);
+                    }
+                    else
+                    {
+                        map.set(arr[i],1);   
+                    }
+                }
+                //console.log(map);
+                var count=0;
+                for (const [key, value] of map.entries()) 
+                {
+                    //console.log(key, value);
+                    if(count<k)
+                    {
+                        sum+=key*value;
+                        //console.log(sum);
+                        count++;
+                    }
+                }
+                console.log(sum);
+            }
+        </script>
+    </head>
+</html>
