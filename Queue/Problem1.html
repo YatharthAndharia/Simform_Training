@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/data-structures/queues/basics-of-queues/practice-problems/algorithm/disk-tower-b7cc7a50/</title>
+        <script>
+            function enqueue(q_arr,ele)
+            {
+                q_arr.push(ele);
+            }
+            function dequeue(q_arr)
+            {
+                if(q_arr.length==0)
+                    return "Queue is Empty! Underflow"
+                return q_arr.shift();
+            }
+            function front(q_arr)
+            {
+                if(q_arr.length==0)
+                    return "Queue is Empty!"
+                return q_arr[0];
+            }
+            function isEmpty(q_arr)
+            {
+                if(q_arr.length==0)
+                    return true;
+                return false;
+            }
+            var arr=[4,5,1,2,3];
+            var len=arr.length;
+            var sorted=new Array();
+            for(let i=0;i<len;i++)
+            {
+                sorted.push(arr[i]);
+            }
+            sorted.sort();
+            sorted.reverse();
+            var temp=new Array();
+            //console.log(sorted+"==>"+arr);
+            while(!isEmpty(arr) && !isEmpty(sorted))
+            {
+                //console.log(arr)
+                if(front(arr)!=front(sorted))
+                {
+                    temp.push(front(arr));
+                    //console.log(isEmpty(temp));
+                    dequeue(arr);
+                    console.log("\n");
+                }
+                else
+                {
+                    
+                    console.log(front(arr));
+                    dequeue(arr);
+                    dequeue(sorted);
+                    while(!isEmpty(temp))
+                    {
+                        arr.unshift(temp.shift());
+                    }
+                    
+                }
+            }
+        </script>
+    </head>
+</html>

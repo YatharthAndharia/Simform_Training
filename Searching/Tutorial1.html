@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>You have been given an array of size N consisting of integers. In addition you have been given an element M you need to find and print the index of the last occurrence of this element M in the array if it exists in it, otherwise print -1. Consider this array to be 1 indexed.</title>
+        <script>
+            var k=2;
+            var arr=[1,2,3,4,1];
+            var len=arr.length
+            //console.log(arr.lastIndexOf(k)+1);
+            var index=0;
+            for(let i=0;i<len;i++)
+            {
+                if(arr[i]==k)
+                {
+                    index=i+1;
+                }
+            }
+            if(index==0)
+            {
+                console.log("-1");
+            }
+            else{
+                console.log(index);
+            }
+        </script>
+    </head>
+</html>

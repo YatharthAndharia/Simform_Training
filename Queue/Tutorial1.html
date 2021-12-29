@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Queue</title>
+        <script>
+            var q_arr=[];
+            function enqueue(q_arr,ele)
+            {
+                q_arr.push(ele);
+            }
+            function dequeue(q_arr)
+            {
+                if(q_arr.length==0)
+                    return "Queue is Empty! Underflow"
+                return q_arr.shift();
+            }
+            function front(q_arr)
+            {
+                if(q_arr.length==0)
+                    return "Queue is Empty!"
+                return q_arr[0];
+            }
+            function isEmpty(q_arr)
+            {
+                if(q_arr.length==0)
+                    return true;
+                return false;
+            }
+            enqueue(q_arr,5);
+            enqueue(q_arr,7);
+            enqueue(q_arr,3);
+            enqueue(q_arr,25);
+            console.log(q_arr);
+            var d=dequeue(q_arr);
+            console.log(d+"\n"+q_arr);
+            var f=front(q_arr)
+            console.log(f);
+            console.log(isEmpty(q_arr));
+        </script>
+    </head>
+</html>
