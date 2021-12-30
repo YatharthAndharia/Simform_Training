@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/practice-problems/algorithm/suzakus-festivals-14dacd7c/</title>
+        <script>
+            var tc=1;
+            for(let it=0;it<tc;it++)
+            {
+                let m=new Map();
+                m.set("A",[2,10,10,30]);
+                m.set("B",[20,30]);
+                let len=m.size;
+                let q=1;
+                let sum=0,max=0,k="";
+                for (const [key, value] of m.entries()) 
+                {
+                    value.sort(function(a,b){return b-a});
+                    sum=value[0]+value[1]+value[2];
+                    if(sum>max)
+                    {
+                        max=sum;
+                        k=key;
+                    }   
+                }
+                console.log(k+" "+max);
+            }
+        </script>
+    </head>
+</html>

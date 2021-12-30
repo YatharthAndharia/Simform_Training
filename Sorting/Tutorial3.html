@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Insertion Sort</title>
+        <script>
+            var arr=[4,1,3,2,5];
+            var len=arr.length;
+            var tmp=0;
+            for(let i=0;i<len;i++)
+            {
+                tmp=arr[i];
+                var j=i;
+                while(j>0 && tmp<arr[j-1])
+                {
+                    arr[j]=arr[j-1];
+                    j--;
+                }
+                arr[j]=tmp;
+            }
+            console.log(arr);
+        </script>
+    </head>
+</html>

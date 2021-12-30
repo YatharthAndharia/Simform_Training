@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/practice-problems/algorithm/maximum-subarray-sum-of-subarrays-7f33aefa/</title>
+        <script>
+            var m=new Map();
+            var arr=[5,-2,7,-3];
+            var sum=0,max=0;
+            var len=arr.length;
+            for(let i=0;i<len;i++)
+            {
+                for(let j=i;j<len;j++)
+                {
+                    if(i==j)
+                    {
+                        sum=arr[j];
+                        max=sum;
+                        m.set(max,0);
+                    }
+                    else
+                    {
+                        sum+=arr[j];
+                        if(sum>max)
+                        {
+                            max=sum;
+                        }
+                        m.set(max,0);
+                    }
+                }
+            }
+            //console.log(m);
+            var ans=0;
+            for(const[key,value] of m.entries())
+            {
+                ans+=key;
+            }
+            console.log(ans);
+        </script>
+    </head>
+</html>

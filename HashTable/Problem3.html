@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title><https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/practice-problems/algorithm/all-vowels-2//title>
+        <script>
+            var str="atuongih";
+            var len=str.length;
+            //console.log(str[0]);
+            var flag_a=true;
+            var flag_e=true;
+            var flag_i=true;
+            var flag_o=true;
+            var flag_u=true;
+            for(let i=0;i<len;i++)
+            {
+                if(str[i]=='a')
+                {
+                    flag_a=false;
+                }
+                if(str[i]=='e')
+                {
+                    flag_e=false;
+                }
+                if(str[i]=='i')
+                {
+                    flag_i=false;
+                }
+                if(str[i]=='o')
+                {
+                    flag_o=false;
+                }
+                if(str[i]=='u')
+                {
+                    flag_u=false;
+                }
+            }
+            if(flag_a && flag_e && flag_i && flag_o && flag_u)
+            {
+                console.log("YES");
+            }
+            else
+            {
+                console.log("NO");
+            }
+        </script>
+    </head>
+</html>

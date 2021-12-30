@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            var m=new Map();
+            m.set(1,"vasya");
+            m.set(2,"petya");
+            m.set(3,"kolya");
+            m.set(4,"limak");
+            m.set(5,"illya");
+            var len=m.size;
+            var q=1;
+            for(let i=0;i<q;i++)
+            {
+                var k=2;
+                for (const [key, value] of m.entries()) 
+                {
+                    if(key==k)
+                    {
+                        console.log(value);
+                    }   
+                }
+            }
+        </script>
+    </head>
+</html>
