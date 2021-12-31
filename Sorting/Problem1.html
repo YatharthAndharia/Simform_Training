@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/practice-problems/algorithm/save-patients/</title>
+        <script>
+            var vaccine=[123,146,454,542,456];
+            var patient=[100,328,248,689,200];
+            var len=patient.length;
+            var flag=true;
+            for(let i=0;i<len;i++)
+            {
+                if(vaccine[i]<patient[i])
+                {
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag)
+                console.log("Yes");
+            else
+                console.log("No");
+        </script>
+    </head>
+</html>
