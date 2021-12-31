@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Linked List</title>
+        <script>
+            class List
+            {
+                constructor(value)
+                {
+                    this.head={
+                        data:value,
+                        pointer:null
+                    }
+                    this.tail=this.head;
+                    this.size=0;
+                }
+                append(value)
+                {
+                    const node={
+                        data:value,
+                        pointer:null
+                    }
+                    this.tail.pointer=node;
+                    this.tail=node;
+                    this.size+=1;
+                }
+                prepend(value)
+                {
+                    const node={
+                        data:value,
+                        pointer:null
+                    }
+                    node.pointer=this.head;
+                    this.head=node;
+                    this.size+=1;
+                }
+                insert_at(index,value)
+                {
+                    const node={
+                        data:value,
+                        pointer:null
+                    }
+                    var ind=0;
+                    var tmp=this.head;
+                    while(ind<=index)
+                    {
+                        if(ind!=index)
+                        {
+                            var temp=tmp;
+                            tmp=tmp.pointer;
+                            //console.log(temp+" "+tmp);
+                            ind++;
+                        }
+                        else
+                        {
+                            temp.pointer=node;
+                            node.pointer=tmp;
+                            break;
+                        }
+                        this.size+=1;
+                    }
+                }
+                delete_first()
+                {
+                    this.head=this.head.pointer;
+                    this.size-=1;
+                }
+                delete_from(index)
+                {
+                    var ind=0;
+                    var tmp=this.head;
+                    while(ind<=index)
+                    {
+                        if(ind!=index)
+                        {
+                            var temp=tmp;
+                            tmp=tmp.pointer;
+                            //console.log(temp+" "+tmp);
+                            ind++;
+                        }
+                        else
+                        {
+                            if(index==0)
+                            {
+                                var ans=this.head;
+                                this.head=this.head.pointer;
+                                //this.size-=1;
+                                break;
+                            }
+                            var ans=temp.pointer;
+                            temp.pointer=tmp.pointer;
+                            if(temp.pointer==null)
+                                this.tail=temp;
+                            break;
+                        }
+                    }
+                    this.size-=1;
+                    return ans;
+                }
+            }
+            var list= new List(10);
+            list.append(15);
+            list.append(20);
+            list.prepend(5);
+            list.delete_first();
+            list.append(25);
+            //console.log(list);
+            //console.log(list.tail);
+            list.insert_at(2,17);
+            list.delete_from(2);
+            //console.log(list.head.pointer);
+
+        </script>
+    </head>
+</html>
