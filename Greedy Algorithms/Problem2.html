@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/practice-problems/algorithm/card-sum-6710882a/</title>
+        <script>
+            var tc=1;
+            for(let it=0;it<tc;it++)
+            {
+                var n=5,x=3;
+                var sum=0,min_cards;
+                var arr=[-2,1,0,2,2];
+                for(let i=0;i<n;i++)
+                {
+                    sum+=arr[i];
+                }
+                if(sum%x==0)
+                {
+                    min_cards=sum/x;
+                }
+                else
+                {
+                    min_cards=sum/x + 1;
+                }
+                console.log(parseInt(min_cards));
+            }
+        </script>
+    </head>
+</html>

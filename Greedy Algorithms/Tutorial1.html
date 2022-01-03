@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/tutorial/</title>
+        <script>
+            var tc=1;
+            for(let it=0;it<tc;it++)
+            {
+                var bottles=5,cap_container=10;
+                var cap_bottles=[8,5,4,3,2];
+                cap_bottles.sort(function(a,b) {return(a-b)});
+                //console.log(cap_bottles);
+                var count=0;
+                for(let i=0;cap_bottles[i]<=cap_container && i<bottles;i++)
+                {
+                    count++;
+                    cap_container-=cap_bottles[i];
+                }
+                console.log(count);
+            }
+        </script>
+    </head>
+</html>
