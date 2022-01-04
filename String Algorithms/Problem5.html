@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/algorithms/string-algorithm/basics-of-string-manipulation/practice-problems/algorithm/can-you-count-11795975/</title>
+        <script>
+            var tc=1;
+            for(let it=0;it<tc;it++)
+            {
+                var str="ab_ae_aio_";
+                var s=new Set();
+                var mul=1;
+                for(let i=0;i<str.length;i++)
+                {
+                    if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u')
+                    {
+                        s.add(str[i]);
+                    }
+                    else if(str[i]=='_')
+                    {
+                        mul*=s.size;
+                    }
+                }
+                console.log(mul);
+            }
+        </script>
+    </head>
+</html>

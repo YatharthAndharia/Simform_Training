@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            var str1="abcda";
+            var str2="zxyza";
+            var arr=[];
+            if(str1.length==str2.length)
+            {
+                var flag=true;
+                for(let i=0;i<str1.length;i++)
+                {
+                    //console.log(str2.charCodeAt(i)-str1.charCodeAt(i));
+                    if(str2.charCodeAt(i)-str1.charCodeAt(i)<0)
+                    {
+                        flag=false;
+                    }
+                    else
+                    {
+                        arr.push(str2.charCodeAt(i)-str1.charCodeAt(i));
+                    }
+                }
+                //console.log(arr);
+                for(let i=0;i<arr.length-1;i++)
+                {
+                    if(arr[i]<arr[i+1])
+                    {
+                        flag=false;
+                    }
+                }
+                if(flag)
+                {
+                    console.log("YES");
+                }
+                else
+                {
+                    console.log("NO");
+                }
+            }
+            else
+            {
+                console.log("NO");
+            }
+        </script>
+    </head>
+</html>

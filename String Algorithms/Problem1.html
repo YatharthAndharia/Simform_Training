@@ -1,0 +1,45 @@
+<html>
+    <head>  
+        <title>https://www.hackerearth.com/practice/algorithms/string-algorithm/basics-of-string-manipulation/practice-problems/algorithm/unique-subsequence-264057c9/</title>
+        <script>
+            var tc=1;
+            for(let it=0;it<tc;it++)
+            {
+                var str="ababa";
+                var str_arr=[];
+                var tmp="";
+                for(let i=0;i<str.length;i++)
+                {
+                    for(let j=i;j<str.length;j++)
+                    {
+                        tmp+=str[j];
+                    }
+                    str_arr.push(tmp);
+                    tmp="";
+                }
+                var ans=0;
+                //console.log(str_arr);
+                for(let i=0;i<str_arr.length;i++)
+                {
+                    for(let j=0;j<str_arr[i].length-1;j++)
+                    {
+                        var flag=true;
+                        var t=str_arr[i];
+                        //console.log(t);
+                        if(t[j]==t[j+1])
+                        {
+                            flag=false;
+                            break;
+                        }
+                    }
+                    if(flag)
+                    {
+                        ans=str_arr[i].length;
+                        break;
+                    }
+                }
+                console.log(ans);
+            }
+        </script>
+    </head>
+</html>

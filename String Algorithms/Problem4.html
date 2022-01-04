@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/algorithms/string-algorithm/basics-of-string-manipulation/practice-problems/algorithm/binary-swap-b91d9bef/</title>
+        <script>
+            var str1="1110";
+            var str2="1101";
+            var count=0;
+            var a_1=0,b_1=0,a_0=0,b_0=0;
+            for(let i=0;i<str1.length;i++)
+            {
+                if(str1[i]==1)
+                    a_1++;
+                if(str1[i]==0)
+                    a_0++;
+                if(str2[i]==1)
+                    b_1++;
+                if(str2[i]==0)
+                    b_0++;
+            }
+            if(a_1!=b_1 || a_0!=b_0)
+            {
+                console.log("-1");
+            }
+            else
+            {
+                for(let i=0;i<str1.length;i++)
+                {
+                    if(str1[i]!=str2[i])
+                    {
+                        count++;
+                    }
+                }
+                console.log(count/2);
+            }
+        </script>
+    </head>
+</html>

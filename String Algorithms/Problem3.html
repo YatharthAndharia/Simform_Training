@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>https://www.hackerearth.com/practice/algorithms/string-algorithm/basics-of-string-manipulation/practice-problems/algorithm/master-cf6dadd7/</title>
+        <script>
+            var tc=1;
+            for(let it=0;it<tc;it++)
+            {
+                var str="goalkeeper";
+                var len=str.length;
+                var arr=[];
+                var good=true,worst=true;
+                for(let i=0;i<len;i++)
+                {
+                    if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u')
+                    {
+                        arr.push(str.charCodeAt(i));
+                    }
+                }
+                for(let i=0;i<arr.length-1;i++)
+                {
+                    if(arr[i]>arr[i+1])
+                    {
+                        good=false;
+                    }
+                    if(arr[i]<arr[i+1])
+                    {
+                        worst=false;
+                    }
+                }
+                if(arr.length==0)
+                {
+                    console.log("Good");
+                }
+                else if(good && !worst)
+                {
+                    console.log("Good");
+                }                
+                else if(worst && !good)
+                {
+                    console.log("Worst");
+                }
+                else
+                {
+                    console.log("Bad");
+                }
+                //console.log(arr);
+            }
+        </script>
+    </head>
+</html>
