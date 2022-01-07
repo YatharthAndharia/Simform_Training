@@ -1,0 +1,10 @@
+document.getElementsByClassName('img-responsive')
+document.querySelector('.img-responsive')
+document.querySelectorAll('.img-responsive')
+document.querySelectorAll('#example-container li:first-child')
+var item=document.querySelectorAll('.img-responsive')
+item.toString();
+'[object NodeList]'
+for(let i=0;i<item.length;i++){console.log(item[i].innerText)}
+getElementsByClassName gives live result but querySelector gives static result.
+

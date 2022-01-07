@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="myCanvas" height="1080" width="1080">Your browser does not support the canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(0,0);
+ctx.lineTo(0,50);
+ctx.lineTo(50,50);
+ctx.closePath();
+ctx.fillStyle="#22ff33";
+ctx.fill();
+ctx.moveTo(50,50);
+ctx.lineTo(100,50);
+ctx.lineTo(100,0);
+ctx.fill();
+
+ctx.fillStyle="rgb(500,0,0)";
+ctx.fillRect(0,60,50,50);
+ctx.fillStyle="rgba(0,255,0,.5)";
+ctx.fillRect(25,85,50,50);
+ctx.strokeStyle="rgb(0,0,500)";
+ctx.lineWidth=2;
+ctx.strokeRect(25,85,25,25);
+
+var g1=ctx.createRadialGradient(300,150,0,300,150,300);
+g1.addColorStop(0,'rgb(500,0,0)');
+g1.addColorStop(1,'rgb(0,0,500)');
+ctx.lineWidth=3;
+ctx.strokeStyle="#000000";
+ctx.fillStyle=g1;
+ctx.beginPath();
+ctx.arc(300,150,150,0,Math.PI*2,true);
+ctx.fill();
+
+var img=new Image();
+img.onload=function(){
+    ctx.drawImage(img,7500,7500);
+}
+img.src="Yatharth.jpg";
+ctx.scale(0.05,0.05);
+//ctx.rotate(0.2);
+//ctx.save();
+
+
+</script>
+
+</body>
+</html>
