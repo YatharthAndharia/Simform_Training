@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script>
+            function prependZero(number) {
+                if (number < 9)
+                    return "0" + number;
+                else
+                    return number;
+            }
+            var countDownDate = new Date("Jan 11, 2022 23:59:59").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                var now = new Date().getTime();                    
+                var distance = countDownDate - now;
+
+                var hours = prependZero(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+                var minutes =prependZero( Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+                var seconds =prependZero(Math.floor((distance % (1000 * 60)) / 1000));
+                    
+                document.getElementById("demo").innerHTML = hours + " : "
+                + minutes + " : " + seconds + " Left";
+                    
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "Coming Soon!";
+                }
+            }, 1000);
+        </script>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,47 +42,75 @@
                 <div class="d1">
                     <a href="#"><img class="i1" width="90" src="flipkart.jpeg" alt="Flipkart"></a>
                         <input class="search-bar" id="text" type="search" placeholder="Search for products, brands and more"><i class="fa fa-search" id="searchIcon" area-hidden="true"></i>
-                        <div class="d2"><a id="btn" href="#"><b>Login</b></a></div>
-                        <div class="d3"><a id="btn1" href="#"><b>More</b><i class="fa fa-angle-down" area-hidden="true"></i></a></div>
-                        <div class="d4"><a id="btn2" href="#"><i class="fa fa-shopping-cart" area-hidden="true"></i><b>Cart</b></a></div>
+                        <div class="d2"><a class="dropdown" id="btn" href="#"><b>Login</b></a>
+                            <div class="dropdown-content">
+                                <div class="flex">
+                                    <div><a style="text-decoration: none;">New Customer?</a></div><div><a href="#">Sign Up</a></div>
+                                </div>
+                                <a class="deco" href="#"><i class="fa fa-user-circle" area-hidden="true" style="color: #0C73EB;"></i> My Profile</a>
+                                <a class="deco" href="#"><i class="fa fa-plus" area-hidden="true" style="color: #0C73EB;"></i> Flipkart Plus Zone</a>
+                                <a class="deco" href="#"><i class="fa fa-wallet" area-hidden="true" style="color: #0C73EB;"></i> Orders</a>
+                                <a class="deco" href="#"><i class="fa fa-heart" area-hidden="true" style="color: #0C73EB;"></i> Wishlist</a>
+                                <a class="deco" href="#"><i class="fa fa-ticket" area-hidden="true" style="color: #0C73EB;"></i> Rewards</a>
+                                <a class="deco" href="#"><i class="fa fa-gift" area-hidden="true" style="color: #0C73EB;"></i> Gift Cards</a>
+                            </div>
+                        </div>
+                        <div class="d3"><a class="dropdown" id="btn1" href="#"><b>More</b> <i class="fa fa-angle-down" area-hidden="true"></i></a>
+                            <div class="dropdown-content">
+                                <a class="deco" href="#"><i class="fa fa-bell" area-hidden="true" style="color: #0C73EB;"></i> Notification Prefrences</a>
+                                <a class="deco" href="#"><i class="fa fa-briefcase" area-hidden="true" style="color: #0C73EB;"></i> Sell on Flipkart</a>
+                                <a class="deco" href="#"><i class="fa fa-question-circle" area-hidden="true" style="color: #0C73EB;"></i> 24×7 Customer Care</a>
+                                <a class="deco" href="#"><i class="fa fa-ad" area-hidden="true" style="color: #0C73EB;"></i> Advertise</a>
+                                <a class="deco" href="#"><i class="fa fa-download" area-hidden="true" style="color: #0C73EB;"></i> Download App</a>
+                            </div>
+                        </div>
+                        <div class="d4"><a id="btn2" href="#"><i class="fa fa-shopping-cart" area-hidden="true"></i> <b>Cart</b></a></div>
                 </div>
             </header>
             <section class="sec1">
                 <div class="top-offers">
-                    <img width="65" src="TopOffer.jpeg" alt="Top Offer"><br>
-                    <span>Top Offers</span>
+                    <a href="#" class="cate"><img width="65" src="TopOffer.jpeg" alt="Top Offer"><br>
+                    <span>Top Offers</span></a>
                 </div>
                 <div class="top-offers">
-                    <img width="65" src="Groccery.jpeg" alt="Groccery"><br>
-                    <span>Groccery</span>
+                    <a href="#" class="cate"><img width="65" src="Groccery.jpeg" alt="Groccery"><br>
+                    <span>Groccery</span></a>
                 </div>
                 <div class="top-offers">
-                    <img width="65" src="Mobile.jpeg" alt="Mobile"><br>
-                    <span>Mobiles</span>
+                    <a href="#" class="cate"><img width="65" src="Mobile.jpeg" alt="Mobile"><br>
+                    <span>Mobiles</span></a>
                 </div>
                 <div class="top-offers">
-                    <img width="65" src="Fashions.jpeg" alt="Fashions"><br>
-                    <span>Fashions<i class="fa fa-angle-down" area-hidden="true"></i></span>
+                    <a href="#" class="cate dropdown"><img width="65" src="Fashions.jpeg" alt="Fashions"><br>
+                    <span>Fashions <i class="fa fa-angle-down" area-hidden="true"></i></span>
+                    <div class="dropdown-content">
+                        <a class="deco" href="#"><i class="fa fa-bell" area-hidden="true" style="color: #0C73EB;"></i> Notification Prefrences</a>
+                        <a class="deco" href="#"><i class="fa fa-briefcase" area-hidden="true" style="color: #0C73EB;"></i> Sell on Flipkart</a>
+                        <a class="deco" href="#"><i class="fa fa-question-circle" area-hidden="true" style="color: #0C73EB;"></i> 24×7 Customer Care</a>
+                        <a class="deco" href="#"><i class="fa fa-ad" area-hidden="true" style="color: #0C73EB;"></i> Advertise</a>
+                        <a class="deco" href="#"><i class="fa fa-download" area-hidden="true" style="color: #0C73EB;"></i> Download App</a>
+                    </div>
+                </a>
                 </div>
                 <div class="top-offers">
-                    <img width="65" src="Electronics.jpeg" alt="Electronics"><br>
-                    <span>Electronics<i class="fa fa-angle-down" area-hidden="true"></i></span>
+                    <a href="#" class="cate"><img width="65" src="Electronics.jpeg" alt="Electronics"><br>
+                    <span>Electronics <i class="fa fa-angle-down" area-hidden="true"></i></span></a>
                 </div>
                 <div class="top-offers">
-                    <img width="65" src="Home.jpeg" alt="Home"><br>
-                    <span>Home</span>
+                    <a href="#" class="cate"><img width="65" src="Home.jpeg" alt="Home"><br>
+                    <span>Home</span></a>
                 </div>
                 <div class="top-offers">
-                    <img width="65" src="Appliances.jpeg" alt="Appliances"><br>
-                    <span>Appliances<i class="fa fa-angle-down" area-hidden="true"></i></span>
+                    <a href="#" class="cate"><img width="65" src="Appliances.jpeg" alt="Appliances"><br>
+                    <span>Appliances <i class="fa fa-angle-down" area-hidden="true"></i></span></a>
                 </div>
                 <div class="top-offers">
-                    <img width="65" src="Travel.jpeg" alt="Travel"><br>
-                    <span>Travel</span>
+                    <a href="#" class="cate"><img width="65" src="Travel.jpeg" alt="Travel"><br>
+                    <span>Travel</span></a>
                 </div>
                 <div class="top-offers">
-                    <img width="65" src="Beauty.jpeg" alt="Beauty, Toys & More"><br>
-                    <span>Beauty, Toys & More<i class="fa fa-angle-down" area-hidden="true"></i></span>
+                    <a href="#" class="cate"><img width="65" src="Beauty.jpeg" alt="Beauty, Toys & More"><br>
+                    <span>Beauty, Toys & More <i class="fa fa-angle-down" area-hidden="true"></i></span></a>
                 </div>
             </section>
             <br>
@@ -63,12 +120,12 @@
                     <div class="deal">
                         Deals of the Day
                     </div>
-                    <div class="timer"><img width="17%" src="Timer.svg" alt="Timer"> 22:07:36 left</div>
+                    <div class="timer"><img width="17%" src="Timer.svg" alt="Timer"> <div id="demo"></div></div>
                     <div class="all"><a href="#" style="color: white;">VIEW ALL</a></div>
                 </div>
                 <div class="list">
                     <div class="item">
-                        <center><a href="#"><img src="Watches.jpeg" alt="Watches" width="60"></a></center>
+                        <center><a href="#"><img class="image" src="Watches.jpeg" alt="Watches" width="60"></a></center>
                         <span class="desc">
                             Casio, Fastrack, Sonata...
                             <br>
@@ -77,7 +134,7 @@
                         </span>
                     </div>
                     <div class="item">
-                        <center><a href="#"><img src="Temple.jpeg" alt="Temples" width="103"></a></center>
+                        <center><a href="#"><img class="image" src="Temple.jpeg" alt="Temples" width="103"></a></center>
                         <span class="desc">
                             Home Temples & more
                             <br>
@@ -86,7 +143,7 @@
                         </span>
                     </div>
                     <div class="item">
-                        <center><a href="#"><img src="Tablet.jpeg" alt="Tablet Case" width="105"></a></center>
+                        <center><a href="#"><img class="image" src="Tablet.jpeg" alt="Tablet Case" width="105"></a></center>
                         <span class="desc">
                             Premium Tablet Cases
                             <br>
@@ -95,7 +152,7 @@
                         </span>
                     </div>
                     <div class="item">
-                        <center><a href="#"><img src="HomeDecor.jpeg" alt="Home Decor" width="105"></a></center>
+                        <center><a href="#"><img class="image" src="HomeDecor.jpeg" alt="Home Decor" width="105"></a></center>
                         <span class="desc">
                             Best Of Home Decor
                             <br>
@@ -104,7 +161,7 @@
                         </span>
                     </div>
                     <div class="item">
-                        <center><a href="#"><img src="Metronaut.jpeg" alt="Metronaut" width="79"></a></center>
+                        <center><a href="#"><img class="image" src="Metronaut.jpeg" alt="Metronaut" width="79"></a></center>
                         <span class="desc">
                             Metronaut, Provogue &...
                             <br>
@@ -113,7 +170,7 @@
                         </span>
                     </div>
                     <div class="item">
-                        <center><a href="#"><img src="Lava.jpeg" alt="Lava A1500" width="50" height="105"></a></center>
+                        <center><a href="#"><img class="image" src="Lava.jpeg" alt="Lava A1500" width="50" height="105"></a></center>
                         <span class="desc">
                             LAVA A1500
                             <br>
@@ -121,7 +178,6 @@
                             <div class="color2">Now ₹999</div>
                         </span>
                     </div>
-                    
                 </div>
                 </div>
                 <img src="ad.jpeg" alt="Advertisement" width="200">
@@ -137,7 +193,7 @@
                 <div class="shop-now">Shop Now!</div>
                 <div class="list2">
                     <div class="item">
-                        <center><a href="#"><img src="Harmonium.jpeg" alt="Harmonium" width="125"></a></center>
+                        <center><a href="#"><img class="image" src="Harmonium.jpeg" alt="Harmonium" width="125"></a></center>
                         <span class="desc">
                             Harmoniums
                             <br>
@@ -146,7 +202,7 @@
                         </span>
                     </div>
                     <div class="item">
-                        <center><a href="#"><img src="Fluit.jpeg" alt="Fluits" width="80"></a></center>
+                        <center><a href="#"><img class="image" src="Fluit.jpeg" alt="Fluits" width="110" height="115"></a></center>
                         <span class="desc">
                             Fluits
                             <br>
@@ -155,7 +211,7 @@
                         </span>
                     </div>
                     <div class="item">
-                        <center><a href="#"><img src="Guitar.jpeg" alt="Guitar" width="118"></a></center>
+                        <center><a href="#"><img class="image" src="Guitar.jpeg" alt="Guitar" width="140" height="115"></a></center>
                         <span class="desc">
                             Acoustic-Guitar
                             <br>
@@ -164,7 +220,7 @@
                         </span>
                     </div>
                     <div class="item">
-                        <center><a href="#"><img src="Accessories.jpeg" alt="Accessories" width="125"></a></center>
+                        <center><a href="#"><img class="image" src="Accessories.jpeg" alt="Accessories" width="125"></a></center>
                         <span class="desc">
                             Musical Accessories
                             <br>
@@ -173,7 +229,7 @@
                         </span>
                     </div>
                     <div class="item">
-                        <center><a href="#"><img src="Mic.jpeg" alt="Mic Accessories" width="80" height="118"></a></center>
+                        <center><a href="#"><img class="image" src="Mic.jpeg" alt="Mic Accessories" width="45" height="118"></a></center>
                         <span class="desc">
                             Microphone Accessories
                             <br>
@@ -182,7 +238,7 @@
                         </span>
                     </div>
                     <div class="item">
-                        <center><a href="#"><img src="Guitar2.jpeg" alt="Guitar" width="120"></a></center>
+                        <center><a href="#"><img class="image" src="Guitar2.jpeg" alt="Guitar" width="115" height="118"></a></center>
                         <span class="desc">
                             Acoustic-Guitar
                             <br>
@@ -191,7 +247,124 @@
                         </span>
                     </div>
                 </div>
-                </div>
+            </div>
+            <footer>
+                <section class="footer">
+                    <div class="footer1">
+                        <div class="f1">
+                            About
+                            <div>
+                                <a class="ft1">Contact Us</a>
+                            </div>
+                            <div>
+                                <a class="ft1">About Us</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Careers</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Flipkart Stories</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Press</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Flipkart WholeSale</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Corporate Information</a>
+                            </div>
+                        </div>
+
+                        <div class="f1">
+                            Help
+                            <div>
+                                <a class="ft1">Payment</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Shipping</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Cancelation & Returns</a>
+                            </div>
+                            <div>
+                                <a class="ft1">FAQ</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Report Infringement</a>
+                            </div>
+                        </div>
+
+                        <div class="f1">
+                            Policy
+                            <div>
+                                <a class="ft1">Return Policy</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Terms of Use</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Security</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Privacy</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Sitemap</a>
+                            </div>
+                            <div>
+                                <a class="ft1">EPR Compilance</a>
+                            </div>
+                        </div>
+
+                        <div class="f1">
+                            Social
+                            <div>
+                                <a class="ft1">Facebook</a>
+                            </div>
+                            <div>
+                                <a class="ft1">Twitter</a>
+                            </div>
+                            <div>
+                                <a class="ft1">YouTube</a>
+                            </div>
+                        </div>
+                        <div style="border-right:1px; border-color: rgb(67, 67, 243); border-style: solid;"></div>
+                        <div class="f1">
+                            Mail US:
+                            <div class="ft1">
+                                Flipkart Internet Private Limited,<br>
+                                Buildings Alyssa, Begonia &<br>
+                                Clove Embassy Tech Village,<br>
+                                Outer Ring Road, Devarabeesanahalli Village,<br>
+                                Bengaluru, 560103,<br>
+                                Karnataka, India
+                            </div>
+                        </div>
+
+                        <div class="f1">
+                            Regestered Office Address
+                            <div class="ft1">
+                                Flipkart Internet Private Limited,<br>
+                                Buildings Alyssa, Begonia &<br>
+                                Clove Embassy Tech Village,<br>
+                                Outer Ring Road, Devarabeesanahalli Village,<br>
+                                Bengaluru, 560103,<br>
+                                Karnataka, India<br>
+                                CIN : U51109KA2012PTC066107<br>
+                                Telephone: 1800 202 9898
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer2">
+                        <a class="deco" href="#"><i class="fa fa-briefcase" area-hidden="true" style="color:gold"></i> Sell on Flipkart</a>
+                                <a class="deco" href="#"><i class="fa fa-ad" area-hidden="true" style="color: gold;"></i> Advertise</a>
+                                <a class="deco" href="#"><i class="fa fa-question-circle" area-hidden="true" style="color: gold;"></i> Gift Cards</a>
+                                <a class="deco" href="#"><i class="fa fa-download" area-hidden="true" style="color: gold;"></i> Help Center</a>
+                                <div class="deco">© 2007-2022 Flipkart.com</div>
+                    </div>
+                </section>
+            </footer>
             
         </main>
     </body>
