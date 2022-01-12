@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon"> 
+    <title>Flipkart</title>
+    <script>
+        function prependZero(number) {
+            if (number < 9)
+                return "0" + number;
+            else
+                return number;
+        }
+        var countDownDate = new Date("Jan 12, 2030 23:59:59").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();                    
+            var distance = countDownDate - now;
+
+            var hours = prependZero(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            var minutes =prependZero( Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+            var seconds =prependZero(Math.floor((distance % (1000 * 60)) / 1000));
+                
+            document.getElementById("demo").innerHTML = hours + " : "
+            + minutes + " : " + seconds + " Left";
+                
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "Coming Soon!";
+            }
+        }, 1000);
+    </script>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container">
+        <span class="nav-item ms-auto">
+            
+            <a href=""><img src="images/flipkart.jpeg" alt="" class="image-fluid" height="50px"></a>   
+        </span>
+        <!--For Mobile view--> 
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#NavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="NavId">
+            <div class="form-group mt-1 m-0 col-16 ml-2 d-flex">
+                <div class="input-group-text text-primary bg-white">
+                    <input style="" type="text" class="form-control border-0" placeholder="Search for products, brands and more"> <i class="fa fa-search" area-hidden="true"></i>
+                </div>
+                <ul class="navbar-nav mx-auto">
+                
+                    <li class="navbar-item dropdown">
+                        <button style="margin-left: 10px;" type="button" class="btnlogin" data-toggle="dropdown">Login</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#"> New Customer? Sign Up</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-user-circle" area-hidden="true" style="color: #0C73EB;"></i> My Profile</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-plus" area-hidden="true" style="color: #0C73EB;"></i> Flipkart Plus Zone</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-briefcase" area-hidden="true" style="color: #0C73EB;"></i> Orders</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-heart" area-hidden="true" style="color: #0C73EB;"></i> Wishlist</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-ticket" area-hidden="true" style="color: #0C73EB;"></i> Rewards</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-gift" area-hidden="true" style="color: #0C73EB;"></i> Gift Cards</a>
+                        </div>
+                    </li></ul>
+            </div>          
+            <ul class="navbar-nav mx-auto">
+                <li class="navbar-item dropdown">
+                    <a href="" class="nav-link mx-3 text-light" data-toggle="dropdown" style="font-size: 14px;"><b>More</b>  <i class="fa fas fa-angle-down" style="color: white; font-size: 14px;"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#"><i class="fa fa-bell" area-hidden="true" style="color: #0C73EB;"></i> Notification Prefrences</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-briefcase" area-hidden="true" style="color: #0C73EB;"></i> Sell on Flipkart</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-question-circle" area-hidden="true" style="color: #0C73EB;"></i> 24×7 Customer Care</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-square" area-hidden="true" style="color: #0C73EB;"></i> Advertise</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-download" area-hidden="true" style="color: #0C73EB;"></i> Download App</a>
+                    </div>
+                </li>
+                <li class="navbar-item">
+                    <a href="" class="nav-link mx-3 text-light" style="font-size: 14px;;"> <i class="fa fa-shopping-cart" style="color: white; font-size: 14px;"></i> <b>
+                        Cart</b>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="py-4 bg-white">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between imagesalign">
+            <div>
+                <a href="#" class="category"><img src="images/TopOffer.jpeg" alt="" class="img-fluid" height="50px" width="50px">
+                <p class="d-block fontmx">Top offers</p></a>
+            </div>  
+            <div>
+                <a href="#" class="category"><img src="images/Groccery.jpeg" alt="" class="img-fluid" height="50px" width="50px">
+                <p class="d-block fontmx">Groccery</p></a>
+            </div>
+            <div>
+                <a href="#" class="category"><img src="images/Mobile.jpeg" alt="" class="img-fluid" height="50px" width="50px">
+                <p class="d-block fontmx">Mobiles</p></a>
+            </div>
+            <div>
+                <a href="#" class="category" data-toggle="dropdown"><img src="images/Fashions.jpeg" alt="" class="img-fluid" height="50px" width="50px">
+                <p class="d-block fontmx">Fashions <i class="fa fa-angle-down" area-hidden="true"></i></p>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">Men's Bottom Wear <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Women Ethnic <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Women Western <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Men Footwera <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Kids <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                </div>
+            </a>
+            </div>
+            <div>
+                <a href="#" class="category" data-toggle="dropdown"><img src="images/Electronics.jpeg" alt="" class="img-fluid" height="50px" width="50px">
+                <p class="d-block fontmx">Electronics <i class="fa fa-angle-down" area-hidden="true"></i></p>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">Electronics GST Store <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Cameras & Accessories <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Computer Peripherals <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Gaming <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Health & Personal Care <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Laptop Accessories <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Laptop & Desktop <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Mobile Accessories <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Powerbank <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                </div>
+            </a>
+            </div>
+            <div>
+                <a href="#" class="category" data-toggle="dropdown"><img src="images/Home.jpeg" alt="" class="img-fluid" height="50px" width="50px">
+                <p class="d-block fontmx">Home <i class="fa fa-angle-down" area-hidden="true"></i></p>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">Living Room <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Kitchen & Dining <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Bedroom Room <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Home Decor <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Tools & Utility <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                </div>
+            </a>
+            </div>
+            <div>
+                <a href="#" class="category" data-toggle="dropdown"><img src="images/Appliances.jpeg" alt="" class="img-fluid" height="50px" width="50px">
+                <p class="d-block fontmx">Appliances <i class="fa fa-angle-down" area-hidden="true"></i></p>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">Washing Machines <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Air Conditioners <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Refrigerators <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Kitchen Appliances <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Home Appliances <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Seasonal Appliances <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                </div>
+                </a>
+            </div>
+            <div>
+                <a href="#" class="category"><img src="images/Travel.jpeg" alt="" class="img-fluid" height="50px" width="50px">
+                <p class="d-block fontmx">Travel</p></a>
+            </div>
+            <div>
+                <a href="#" class="category" data-toggle="dropdown"><img src="images/Beauty.jpeg" alt="" class="img-fluid" height="50px" width="50px">
+                <p class="d-block fontmx">Beauty, Toys & More <i class="fa fa-angle-down" area-hidden="true"></i></p>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">Men's Grooming <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Food & Drinks <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Baby Care <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Sports & Fitness <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                    <a class="dropdown-item" href="#">Toys & School Supplies <i class="fa fa-angle-right" style="color: #0C73EB;"></i></a>
+                </div>
+            </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<body bg-color="white">
+    <div class="container mt-3 ">
+        <div class="row">
+            <div class="col-12">
+                <section>
+                    <div class="d-flex align-items-center justify-content-between imagesalign box">
+                        <div class="card">
+                            <div class="card-header bg-white">
+                                <div class="inline-block">
+                                    <span class="d-flex justify-content-between">
+                                        <p class="mb-0" style="font-size: 18px;"><b>Deals of the day </b><br><img src="images/Timer.svg" height="20px" width="20px" alt=""><b id="demo" style="color: gray; font-size: medium;"></b>
+                                        </p>
+                                    
+                                    <button class="btn btn-primary float-right">View All</button></span>
+                                </div>
+                            </div>
+                        
+                            <div class="card-body" style="overflow-y:auto;">
+                                <div class="col-12 d-flex">
+                                    <div class="pr-3 imghoverr">
+                                        <img src="images/Watches.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Casio, Fastrack, Sonata...</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Upto 80%+Extra 10%Off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Knockout Deals!</p>
+                                    </div>  
+
+                                    <div class="pr-3 imghoverr">
+                                        <img src="images/Temple.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Home Temples & more</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Extra 10% Off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Space Saving furniture</p>
+                                    </div>  
+
+                                    <div class="pr-3 imghoverr">
+                                        <img src="images/Tablet.jpeg" alt="" class="imagedealofday">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Premium Tablet Cases</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Extra 10% Off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">For All Top Models</p>
+                                    </div>  
+
+                                    <div class="pr-3 imghoverr">
+                                        <img src="images/HomeDecor.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Best Of Home Decor</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >From ₹79</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Lowest Price Ever</p>
+                                    </div> 
+
+                                    <div class="pr-3 imghoverr">
+                                        <img src="images/Metronaut.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Metronaut, Provogue &...</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >From₹249+Extra10%Off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Jackets, Dresses & More</p>
+                                    </div>  
+
+                                    <div class="pr-3 imghoverr">
+                                        <img src="images/Lava.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">LAVA A1500</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Flat ₹830 off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Now ₹999</p>
+                                    </div>  
+
+                                    <div class="pr-3 imghoverr">
+                                        <img src="images/Lava.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">LAVA A1500</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Flat ₹830 off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Now ₹999</p>
+                                    </div>  
+                                    <div class="pr-3 imghoverr">
+                                        <img src="images/Lava.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">LAVA A1500</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Flat ₹830 off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Now ₹999</p>
+                                    </div>  
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <section>
+                    <div class="d-flex align-items-center justify-content-between imagesalign box">
+                        <div class="card">
+                            <div class="card-header bg-white"> 
+                                <div class="inline-block">
+                                    <span class="d-flex justify-content-between">
+                                        <p class="mb-0" style="font-size: 18px;"><b>Books And music Instruments </b>
+                                       </p>
+                                       
+                                    <button class="btn btn-primary float-right">View All</button></span>
+                                </div>
+                                <p class="float-left mt-0 mb-0 text-secondary" style="font-size: 15px;">Shop Now!</p>
+                            </div>
+        
+                            <div class="card-body" style="overflow-y: auto;">
+                                <div class="col-12 d-flex">
+
+                                    <div class="pr-4 imghoverr">
+                                        <img src="images/Harmonium.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Harmoniums</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Upto 60% Off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Shop Now!</p>
+                                    </div>
+
+                                    <div class="pr-4 imghoverr">
+                                        <img src="images/Fluit.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Fluits</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Upto 80 % Off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Shop Now!</p>
+                                    </div>
+
+                                    <div class="pr-4 imghoverr">
+                                        <img src="images/Guitar.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Acoustic-Guitar</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Starting ₹1799</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Juarez, Revel..</p>
+                                    </div>  
+
+                                    <div class="pr-4 imghoverr">
+                                        <img src="images/Accessories.jpeg" alt="" class="imagedealofday">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Musical Accessories</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Upto 80% Off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Shop Now!</p>
+                                    </div>
+
+                                    <div class="pr-4 imghoverr">
+                                        <img src="images/Mic.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Microphone Accessories</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Upto 80% Off</p>
+                                        <p class="text-secondary" style="font-size: 12px;">Shop Now!</p>
+                                    </div>  
+
+                                    <div class="pr-4 imghoverr">
+                                        <img src="images/Guitar2.jpeg" alt="" class="imagedealofday" height="100px" width="100px">
+                                        <p class="d-block pt-2 mb-1" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Acoustic-Guitar</p>
+                                        <p class="text-success mb-0" style="font-size: 12px;" >Starting ₹1999</p>
+                                        <p class="text-secondary" style="font-size: 12px;">By Revel</p>
+                                    </div>  
+
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<footer class="page-footer font-small text-light  mt-4" style="background-color: #172337;">
+
+    <div class="container text-center text-md-left" style="background-color: #172337;">
+      <div class="row">
+
+        <div class="col-md-3 mx-auto">
+          <h6 class="text-uppercase mt-3 mb-4 fontfotter" style="color: gray;">About</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" class="text-light fontsx">Conatct us</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light fontsx">About us</a>
+            </li>
+            <li>
+                <a href="#!" class="text-light fontsx">Carrier</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light fontsx">Stories</a>
+              </li>
+          </ul>
+        </div>
+
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-3 mx-auto">
+          <h6 class="text-uppercase mt-3 mb-4 fontfotter" style="color: gray;">Help</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" class="text-light fontsx">Payment</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light fontsx">Shipping</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light fontsx">FAQ</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light fontsx">Report</a>
+            </li>
+          </ul>
+        </div>
+  
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-3 mx-auto"> 
+          <h6 class="text-uppercase mt-3 mb-4 fontfotter" style="color: gray;">Social</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" class="text-light fontsx">Facebook</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light fontsx">Twitter</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light fontsx">Instagram</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light fontsx">You Tube</a>
+            </li>
+          </ul>
+        </div>
+  
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-3 mx-auto">
+  
+          <h6 class="text-uppercase mt-3 mb-4 fontfotter" style="color: gray;">Policy</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" class="text-light fontsx">Return</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light fontsx">Term Of Use</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light fontsx">Security</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light fontsx">Privacy</a>
+            </li>
+          </ul>  
+        </div>
+    </div>
+      
+    <a class="deco" href="#"><i class="fa fa-book" area-hidden="true" style="color: gold;"></i> Advertise</a>
+    <a class="deco" href="#"><i class="fa fa-question-circle" area-hidden="true" style="color: gold;"></i> Gift Cards</a>
+    <a class="deco" href="#"><i class="fa fa-download" area-hidden="true" style="color: gold;"></i> Help Center</a>
+</div>
+    
+    <div class="footer-copyright text-center py-3 fontsx">© 2007-2022
+      <a href="https://mdbootstrap.com/" class="text-white">  Flipkart.com</a>
+    </div>
+  
+  </footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
