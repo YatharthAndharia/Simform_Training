@@ -6,11 +6,11 @@
             function callerFunction()
             {
                 var str=document.getElementById('i1').value;
-                var hash=this.hash(str);
+                var hash=this.calculateHash(str);
                 document.getElementById('output').innerHTML=hash;
             }
 
-            function hash(msg) 
+            function calculateHash(msg) 
             {
                 // initialize variables 
                 var H0 = 0x67452301;
