@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Scientific Calculator JavaScript</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<!--Body section strat-->
+<body >
+    <!--Container strat-->
+    <div class="container">
+        <!--Row strat-->
+        <div class="row">
+            <!--Col strat-->
+            <div class="col-12 mt-4 mx-auto d-flex justify-content-center align-items-center">
+                <!--Table strat-->
+                <table border="0">
+                    <tr>
+                        <!--display output-->
+                        <td colspan="5">
+                            <div id="disp-container">
+                                <div id="h1">
+                                    <small> <input id="screen" type="text" placeholder="0"  autofocus> </small>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="py-auto">
+                        <td><button class="btn btn-sm text-black" onclick="degree()">DEG</button></td>
+                        <td><button class="btn btn-sm text-black" onclick="radian()">F - E</button></td>
+                    </tr>
+                    <tr class="py-auto">
+                        <td><button id="btnmc" class="btn text-black" disabled title="Clear all memory" onclick="mem.mc()">MC</button></td>
+                        <td><button id="btnmr" class="btn text-black" disabled title="Memory recall" onclick="mem.mr()">MR</button></td>
+                        <td><button class="btn text-black" title="Memory add" onclick="mem.mplus()">M+</button></td>
+                        <td><button class="btn text-black" title="Memory substract" onclick="mem.mminus()">M-</button></td>
+                        <td><button class="btn text-black" title="Memory store" onclick="mem.ms()">MS</button></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><button class="btn btn-sm text-black top"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/trigo.png" class="trig" height="20px" width="20px" alt="T"> Trigonometry <i class="fa fas fa-angle-down" style=" font-size: 14px;"></i></button>
+                            <div class="dropdown-menu" aria-labelledby="btnDropdownDemo">
+                                <div class="btn-group mr-2" role="group" aria-label="First group">
+                                    <button class="btn btn-lg text-black" onclick="tr.sin()">sin</button>
+                                </div>
+                                <div class="btn-group mr-2" role="group" aria-label="second group">
+                                    <button class="btn btn-lg text-black" onclick="tr.cos()">cos</button>
+                                </div>   
+                                <div class="btn-group mr-2" role="group" aria-label="third group">
+                                    <button class="btn btn-lg text-black" onclick="tr.tan()">tan</button>
+                                </div>
+                                
+                                <div class="mt-2">
+                                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                                        <button class="btn btn-lg text-black" onclick="tr.cot()">cot</button>
+                                    </div>
+                                    <div class="btn-group mr-2" role="group" aria-label="second group">
+                                        <button class="btn btn-lg text-black" onclick="tr.sec()">sec</button>
+                                    </div>   
+                                    <div class="btn-group mr-2" role="group" aria-label="third group">
+                                        <button class="btn btn-lg text-black" onclick="tr.cosec()">cosec</button>
+                                    </div>                  
+                                </div>     
+                            </div>
+                                             
+                        </td>
+                        <td colspan="2"><button class="btn text-black top" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/f.png" height="20px" width="20px" alt="F">Function <i class="fa fas fa-angle-down" style="font-size: 14px;"></i></button>
+                            <div class="dropdown-menu" aria-labelledby="btnDropdownDemo2">
+                                <div class="btn-group mr-2" role="group" aria-label="First group">
+                                    <button class="btn btn-lg text-black" onclick="fn.random()">rand</button>
+                                </div>
+                                <div class="btn-group mr-2" role="group" aria-label="second group">
+                                    <button class="btn btn-lg text-black" onclick="fn.ceiling()">ceil</button>
+                                </div>   
+                                <div class="btn-group mr-2" role="group" aria-label="third group">
+                                    <button class="btn btn-lg text-black" onclick="fn.floor()">floor</button>
+                                </div>                  
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="py-auto">
+                        <td><button class="btn text-black" onclick="second()">2<sup>nd</sup></button></td>
+                        <td><button class="btn text-black" id="PI" value="" onclick="addToClipBoard(this)">&prod;</button></td>
+                        <td><button class="btn text-black" id="E" value="" onclick="addToClipBoard(this)">e</button></td>
+                        <td><button class="btn text-black" onclick="AC()">C</button></td>
+                        <td><button class="btn text-black" onclick="clr()">&#9003;</button></td>
+                    </tr>
+                    <tr class="py-4">
+                        <td><button id='x2' class="btn text-black" onclick="square()">x<sup>2</sup></button></td>
+                        <td><button class="btn text-black" onclick="inverse()"><sup>1</sup>&frasl;<sub>x</sub></button></td>
+                        <td><button class="btn text-black" onclick="absolute()">|x|</button></td>
+                        <td><button class="btn text-black" onclick="exponent()">exp</button></td>
+                        <td><button class="btn text-black bn" value="%" onclick="addToClipBoard(this)">mode</button></td>
+
+                    </tr>
+                    <tr class="py-4">
+                        <td><button class="btn text-black" onclick="squareRoot()">2&radic;<span style="text-decoration: overline"><sub>x</sub></span></button></td>
+                        <td><button class="btn text-black bn" value="(" onclick="addToClipBoard(this)">(</td>
+                        <td><button class="btn text-black bn" value=")" onclick="addToClipBoard(this)">)</button></td>
+                        <td><button class="btn text-black" onclick="fact()">n!</button></td>
+                        <td><button class="btn text-black mathfun bn" value="/" onclick="addToClipBoard(this)">÷</button></td>
+                    </tr>
+                    <tr class="py-4">
+                        <td><button class="btn btn-sm text-black" value="**" onclick="addToClipBoard(this)">x<sup>y</sup></button></td>
+                        <td><button style="color: black;" class="btn btn-sm btn-light text-black mathdigt bn" value="7" onclick="addToClipBoard(this)">7</td>
+                        <td><button style="color: black;" class="btn btn-sm btn-light text-black mathdigt bn" value="8" onclick="addToClipBoard(this)">8</button></td>
+                        <td><button style="color: black;" class="btn btn-sm btn-light text-black mathdigt bn" value="9" onclick="addToClipBoard(this)">9</button></td>
+                        <td><button class="btn btn-sm text-black mathfun bn" value="*" onclick="addToClipBoard(this)">×</button></td>
+                    </tr>
+                    <tr class="py-4">
+                        <td><button id='tenpowx' class="btn btn-sm text-black" onclick="tenpowx()">10<sup>x</sup></button></td>
+                        <td><button style="color: black;" class="btn btn-sm btn-light text-black mathdigt bn" value="4" onclick="addToClipBoard(this)">4</td>
+                        <td><button style="color: black;" class="btn btn-sm btn-light text-black mathdigt bn" value="5" onclick="addToClipBoard(this)">5</button></td>
+                        <td><button style="color: black;" class="btn btn-sm btn-light text-black mathdigt bn" value="6" onclick="addToClipBoard(this)">6</button></td>
+                        <td><button class="btn btn-sm text-black mathfun bn" value="-" onclick="addToClipBoard(this)">-</button></td>
+                    </tr>
+                    <tr class="py-4">
+                        <td><button class="btn btn-sm text-black" onclick='logx()'>log</td>
+                        <td><button style="color: black;" class="btn btn-sm btn-light text-black mathdigt bn" value="1" onclick="addToClipBoard(this)">1</td>
+                        <td><button style="color: black;" class="btn btn-sm btn-light text-black mathdigt bn" value="2" onclick="addToClipBoard(this)">2</button></td>
+                        <td><button style="color: black;" class="btn btn-sm btn-light text-black mathdigt bn" value="3" onclick="addToClipBoard(this)">3</button></td>
+                        <td><button class="btn btn-sm text-black mathfun bn" value="+" onclick="addToClipBoard(this)">+</button></td>
+                    </tr>
+                    <tr class="py-4">
+                        <td><button class="btn btn-sm text-black" onclick="lnx()">ln</button></td>
+                        <td><button class="btn btn-sm btn-light text-black mathdigt" onclick="rev()"><sup>+</sup>&frasl;<sub>-</sub> </button></td>
+                        <td><button style="color: black;" class="btn btn-sm btn-light text-black mathdigt bn" value="0" onclick="addToClipBoard(this)">0</button></td>
+                        <td><button class="btn btn-sm btn-light text-black dot bn" value="." onclick="addToClipBoard(this)">.</button></td>
+                        <td><button class="btn btn-sm btn-primary text-black equal" onclick="equalsTo()">=</button></td>
+                    </tr>
+                </table>
+                 <!--Table End-->
+            </div>
+            <!--Col End-->
+        </div>
+        <!--Row End-->
+    </div>
+    <!--Container End-->
+</body>
+<!--Body section End-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>
